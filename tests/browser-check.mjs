@@ -253,6 +253,11 @@ try {
   assert.ok(selectionResult.text.length>0,'Text remains selectable: '+JSON.stringify(selectionResult));
   await evaluate('getSelection().removeAllRanges()');
   assert.equal(await evaluate("document.body.classList.contains('is-page-dragging')"),false);
+  // Extensions render their controls inside a shadow root; these clicks must stay intact.
+  await evaluate(`(() => {const host=document.createElement('swarm-rebuild');host.style.cssText='position:fixed;inset:0;z-index:2147483647';const root=host.attachShadow({mode:'open'});const button=document.createElement('button');button.textContent='Tour';button.style.cssText='position:fixed;left:50px;top:150px;width:100px;height:40px';button.onclick=()=>button.textContent='Touring';root.append(button);document.documentElement.append(host);})()`);
+  await mouseDrag(100,170,0);
+  assert.equal(await evaluate("document.querySelector('swarm-rebuild').shadowRoot.querySelector('button').textContent"),'Touring','Shadow-root extension buttons remain clickable');
+  await evaluate("document.querySelector('swarm-rebuild').remove()");
   assert.deepEqual(errors, [], 'Browser JavaScript errors');
   await writeFile(path.join(artifacts, 'browser-check.json'), JSON.stringify({ passed: true, viewportWidths: [1440, 390, 320], pages: ['index.html', 'house.html'], singleApplianceToggles:true,petHairFee:true,mousePageDrag:true,scrollPositionPreserved:true,sharedSelectionsPreserved:true,objectExtrasRestored:true,textSelectionAndSliderUnaffected:true,decorationsIgnorePointer:true,differentThemesAndInteriors: true, windowsBeyondTen: true, reducedMotion: true, pointerEffects: finePointerActive, pageLinks: true, propertyInRequest: true, serviceCardRates: true, calculator: true, minimum: true, extras: true, formValidation: true, demoDialog: true, mobileMenu: true, noHorizontalOverflow: true, browserExceptions: errors }, null, 2));
   console.log('Browser checks passed: mouse page dragging and scroll/state restoration, safe text/slider interaction, single appliances, optional pet-hair fee, receipts, links/forms, themes and responsive layouts.');

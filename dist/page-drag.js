@@ -31,6 +31,8 @@ export function setupPageDrag({ beforeNavigate = () => {} } = {}) {
     if (event.clientX >= document.documentElement.clientWidth) return;
     const target = event.target;
     if (!(target instanceof Element) || target.closest(blocked)) return;
+    // Shadow-root overlays belong to extensions/widgets, never to the page background.
+    if (event.composedPath().some(node => node instanceof ShadowRoot || (node instanceof Element && node.shadowRoot))) return;
     if ([...target.childNodes].some(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim())) return;
     gesture = { id: event.pointerId, x: event.clientX, y: event.clientY, active: false,
       threshold: Math.min(150, Math.max(100, innerWidth * 0.1)), message: '' };
