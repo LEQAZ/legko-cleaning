@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <title>ЛЕГКО — клининг с заботой</title>
+  <symbol id="mark" viewBox="0 0 48 48">
+    <rect x="2" y="2" width="44" height="44" rx="14" fill="currentColor"/>
+    <path d="M14 34V24a10 10 0 0 1 20 0v10H14Z" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M24 14v20M14 25h20" fill="none" stroke="#fff" stroke-opacity=".65" stroke-width="2"/>
+    <path d="m35 6 2.1 5.9L43 14l-5.9 2.1L35 22l-2.1-5.9L27 14l5.9-2.1Z" fill="#f3d28c"/>
+  </symbol>
+  <use href="#mark" color="#7536cd"/>
+</svg>
