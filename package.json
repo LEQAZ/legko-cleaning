@@ -1,0 +1,9 @@
+{
+  "name": "chisto-cleaning-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/calculator.test.mjs tests/calculator-session.test.mjs",
+    "check": "node --check dist/app.js"
+  }
+}

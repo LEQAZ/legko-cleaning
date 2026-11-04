@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Учебная страница уборки частных домов «ЛЕГКО»: услуги, прозрачный демонстрационный расчёт и пример заявки.">
+  <meta name="theme-color" content="#f3f7fc">
+  <title>Уборка частных домов — ЛЕГКО</title>
+  <link rel="icon" href="favicon-house.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="themes.css">
+  <script src="app.js" type="module"></script>
+</head>
+<body data-property-type="house" data-theme="house" data-property-label="Частный дом">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="ЛЕГКО — клининг с заботой, на главную">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><use href="assets/brand-mark.svg#mark"/></svg>
+        <span class="brand-type"><span class="brand-wordmark">легко<span class="brand-dot" aria-hidden="true">.</span></span><span class="brand-tagline">клининг с заботой</span></span>
+      </a>
+      <nav id="navigation" class="navigation" aria-label="Основная навигация">
+        <a href="#services">Виды уборки</a><a href="#calculator">Калькулятор</a><a href="#process">Как это работает</a><a href="#questions">Вопросы</a>
+      </nav>
+      <a href="#calculator" class="button button-small header-cta">Рассчитать стоимость <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-controls="navigation" aria-expanded="false" aria-label="Открыть меню"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <nav class="property-navigation container" aria-label="Выбор типа помещения">
+      <div class="property-tabs">
+        <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 21V5l10-3v19M14 7l6 2v12M2 21h20M7 7v2m3-3v2M7 12v2m3-3v2M7 17v2m3-3v2M17 11v2m0 3v2"/></svg><span>Квартиры</span></a>
+        <a href="house.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m2 11 10-9 10 9M5 9v12h14V9M10 21v-7h4v7M7 5V2h3"/></svg><span>Частные дома</span></a>
+      </div>
+      <span class="property-caption">Уборка частных домов<span class="drag-caption">Зажмите свободный фон и потяните ↔</span></span>
+    </nav>
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> Уборка частных домов</p>
+        <h1 id="hero-title">
+  Чистый дом.<br>
+  Свободный <span class="highlight">вечер.</span>
+</h1>
+        <p class="hero-description">Пусть дома будет приятно, а в планах — любимые дела. Выберите уборку под свой ритм и узнайте её стоимость за пару кликов.</p>
+        <div class="hero-actions"><a class="button" href="#calculator">Рассчитать мою уборку <span aria-hidden="true">↗</span></a><a class="text-link" href="#services">Что входит в уборку <span aria-hidden="true">↓</span></a></div>
+        <div class="hero-notes"><span><i aria-hidden="true">✓</i> Частные дома</span><span><i aria-hidden="true">✓</i> Понятный состав работ</span></div>
+        <p class="demo-label">Учебный проект. Компания, цены и условия — демонстрационные.</p>
+      </div>
+      <div class="hero-visual">
+        <div class="architecture-frame"><img class="room-photo" src="assets/house-interior.png" width="1122" height="1402" fetchpriority="high" alt="Визуализация гостиной частного дома: скатная крыша, деревянные балки, синие подушки и вид на сад"><span class="glazing-lines" aria-hidden="true"></span></div>
+        <div class="photo-caption"><span class="caption-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m2 11 10-9 10 9M5 9v12h14V9M10 21v-7h4v7M7 5V2h3"/></svg></span><div>Чистота — это ощущение.<small>Остальное оставьте за дверью.</small></div></div>
+        <div class="floating-note"><span class="architecture-badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m2 11 10-9 10 9M5 9v12h14V9M10 21v-7h4v7M7 5V2h3"/></svg></span><p>Тепло. Простор.<br><strong>Домашний уют.</strong></p></div>
+        <span class="decor-star" aria-hidden="true">✳</span>
+      </div>
+    </section>
+
+    <section class="services section container" id="services" aria-labelledby="services-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / Под ваш ритм</p><h2 id="services-title">У каждой уборки<br>свой повод.</h2></div><p class="section-intro">Освежить дом к выходным или начать с чистого листа после ремонта — выберите подходящий формат.</p></div>
+      <div class="service-grid">
+        <article class="service-card"><div class="service-top"><span class="service-icon" aria-hidden="true">☀</span><span class="pill">Для регулярной чистоты</span></div><h3>Поддерживающая</h3><p>Когда хочется освежить пространство и вернуть вещам свои места.</p><ul><li>Пыль и доступные поверхности</li><li>Полы во всех комнатах</li><li>Кухня и сантехника снаружи</li></ul><div class="service-bottom"><span>от <strong data-service-rate="regular"></strong> / м²</span><button type="button" class="circle-button" data-pick-service="regular" aria-label="Рассчитать поддерживающую уборку">↗</button></div></article>
+        <article class="service-card service-featured"><div class="service-top"><span class="service-icon" aria-hidden="true">✳</span><span class="pill">Для большого обновления</span></div><h3>Генеральная</h3><p>Больше внимания деталям, до которых обычно не доходят руки.</p><ul><li>Всё из поддерживающей уборки</li><li>Двери, плинтусы и выключатели</li><li>Тщательная уборка кухни и санузла</li></ul><div class="service-bottom"><span>от <strong data-service-rate="deep"></strong> / м²</span><button type="button" class="circle-button" data-pick-service="deep" aria-label="Рассчитать генеральную уборку">↗</button></div></article>
+        <article class="service-card"><div class="service-top"><span class="service-icon" aria-hidden="true">⌂</span><span class="pill">Для нового начала</span></div><h3>После ремонта</h3><p>Последний шаг между завершённым ремонтом и настоящим домашним уютом.</p><ul><li>Удаление строительной пыли</li><li>Уборка доступных поверхностей</li><li>Мытьё полов и сантехники</li></ul><div class="service-bottom"><span>от <strong data-service-rate="renovation"></strong> / м²</span><button type="button" class="circle-button" data-pick-service="renovation" aria-label="Рассчитать уборку после ремонта">↗</button></div></article>
+      </div><p class="section-footnote">Демонстрационные тарифы. Минимальная стоимость основной уборки — 3 000 ₽. Дополнительные услуги рассчитываются отдельно.</p>
+    </section>
+
+    <section class="calculator-section section" id="calculator" aria-labelledby="calculator-title">
+      <div class="container calculator-grid">
+        <div class="calculator-controls"><p class="eyebrow">02 / Уборка частного дома</p><h2 id="calculator-title">Ваш дом.<br>Ваш расчёт.</h2><p class="calculator-lead">Настройте уборку под себя.<br>Стоимость обновляется сразу.</p>
+          <fieldset class="service-selector"><legend>Какую уборку планируем?</legend><div class="segmented"><label><input type="radio" name="service" value="regular" checked><span>Поддерживающая</span></label><label><input type="radio" name="service" value="deep"><span>Генеральная</span></label><label><input type="radio" name="service" value="renovation"><span>После ремонта</span></label></div></fieldset>
+          <div class="area-control"><label for="area-number">Площадь помещения</label><div class="number-field"><input id="area-number" type="number" min="20" max="1000" step="1" value="100" inputmode="numeric" aria-describedby="area-help"><span>м²</span></div></div>
+          <input id="area-range" type="range" min="20" max="1000" step="1" value="100" aria-label="Площадь помещения в квадратных метрах"><div class="range-labels" id="area-help"><span>20 м²</span><span>1000 м²</span></div>
+          <p class="property-scope" id="property-scope">Сложите площадь помещений всех этажей. Крыльцо, террасу и ступени не включайте: они рассчитываются отдельно ниже.</p>
+          <fieldset class="property-extras">
+            <legend>Особенности дома<span class="demo-rate-label">Учебные тарифы</span></legend>
+            <div id="property-extra-controls"></div>
+            <p class="property-extras-note" id="property-extras-note"></p>
+          </fieldset>
+          <fieldset class="extras quantity-extras">
+            <legend>Дополнительные услуги</legend>
+            <p class="quantity-help">Укажите число створок и выберите услуги для одного духового шкафа и одного холодильника.</p>
+            <div class="quantity-item">
+              <label for="window-count"><strong>Мытьё окон</strong><small><span data-extra-price="window">—</span> ₽ за одну створку</small></label>
+              <div class="quantity-control"><button type="button" id="window-minus" data-count="windows" data-delta="-1" aria-label="Уменьшить количество створок">−</button><input id="window-count" data-quantity="windows" type="number" min="0" step="1" value="0" inputmode="numeric" required aria-label="Количество створок окон"><button type="button" id="window-plus" data-count="windows" data-delta="1" aria-label="Увеличить количество створок">+</button></div>
+            </div>
+            <label class="single-extra-item" for="oven">
+              <span><strong>Чистка духового шкафа</strong><small>Внутренние поверхности · <span data-extra-price="oven">—</span> ₽ за один прибор</small></span>
+              <input id="oven" data-single-extra="oven" type="checkbox" class="switch" aria-label="Добавить: чистка духового шкафа">
+            </label>
+            <label class="single-extra-item" for="fridge">
+              <span><strong>Мытьё холодильника</strong><small>Внутренние поверхности · <span data-extra-price="fridge">—</span> ₽ за один прибор</small></span>
+              <input id="fridge" data-single-extra="fridge" type="checkbox" class="switch" aria-label="Добавить: мытьё холодильника">
+            </label>
+            <label class="single-extra-item" for="pet-hair">
+              <span><strong>Дополнительная уборка шерсти животных</strong><small>Сбор шерсти с пола и доступных поверхностей · <span data-extra-price="petHair">—</span> ₽ за всю уборку</small></span>
+              <input id="pet-hair" data-single-extra="petHair" type="checkbox" class="switch" aria-label="Добавить дополнительную уборку шерсти животных">
+            </label>
+            <p class="pet-hair-note">Доплата за дополнительный сбор шерсти, а не за само наличие питомца. Включите опцию, если такая работа нужна.</p>
+            <p class="quantity-error" id="quantity-error" aria-live="polite"></p>
+          </fieldset>
+        </div>
+        <aside class="estimate-card" aria-label="Расчёт стоимости">
+          <div class="estimate-heading"><span class="estimate-mark" aria-hidden="true">✳</span><span>Ваша уборка</span><span class="estimate-demo">Демо</span></div>
+          <h3 id="estimate-service">Поддерживающая</h3>
+          <p class="estimate-subtitle">Из чего складывается стоимость</p>
+          <dl class="estimate-lines" id="estimate-lines" aria-label="Состав стоимости"></dl>
+          <div class="estimate-total"><span class="estimate-total-label">Итого</span><div class="estimate-price" aria-live="polite" aria-atomic="true"><span id="total-price">8 000</span><span class="currency">₽</span></div></div>
+          <p class="minimum-explanation">Минимальная стоимость основной уборки — <strong id="minimum-amount">3 000 ₽</strong>. Дополнительные услуги оплачиваются отдельно.</p>
+          <a class="button estimate-button" href="#request" id="continue-button">Перейти к демо-заявке <span aria-hidden="true">↗</span></a>
+          <p class="estimate-note">Это учебный калькулятор: цены условные, оплата и бронирование не выполняются.</p>
+          <span class="estimate-decoration" aria-hidden="true">✦</span>
+        </aside>
+      </div>
+    </section>
+
+    <section id="process" class="section container process" aria-labelledby="process-title"><div class="section-heading"><div><p class="eyebrow">03 / Без лишних хлопот</p><h2 id="process-title">Три шага<br>к понятной заявке.</h2></div></div><div class="steps-grid"><article><span class="step-number">01</span><h3>Выберите формат</h3><p>Определите вид уборки, площадь и дополнительные услуги.</p></article><article><span class="step-number">02</span><h3>Посмотрите расчёт</h3><p>Проверьте стоимость и состав выбранных работ в калькуляторе.</p></article><article><span class="step-number">03</span><h3>Проверьте демо-заявку</h3><p>Заполните форму и посмотрите итог. Данные останутся в этой вкладке.</p></article></div></section>
+
+    <section id="request" class="request-section container" aria-labelledby="request-title"><div class="request-copy"><p class="eyebrow">04 / Попробуйте сами</p><h2 id="request-title">Освободите место<br>для приятного.</h2><p>Проверьте, как выглядит заявка с вашим расчётом. В учебной версии форма ничего не отправляет и не сохраняет контактные данные.</p><div class="request-flower" aria-hidden="true">✳</div></div><form id="request-form" class="request-form"><label for="customer-name">Как к вам обращаться?</label><input id="customer-name" name="name" type="text" minlength="2" maxlength="60" placeholder="Имя для демонстрации" autocomplete="off" required><label for="customer-phone">Телефон</label><input id="customer-phone" name="phone" type="tel" placeholder="+7 900 000-00-00" autocomplete="off" inputmode="tel" maxlength="24" required aria-describedby="phone-help"><small id="phone-help">Для примера можно указать вымышленный номер.</small><p class="form-error" id="form-error" role="alert"></p><button class="button" type="submit">Сформировать демо-заявку <span aria-hidden="true">↗</span></button><p class="form-note">Нажатие не оформляет реальный заказ. Отправки на сервер нет.</p></form></section>
+
+    <section id="questions" class="section container faq" aria-labelledby="faq-title"><div><p class="eyebrow">05 / Важные мелочи</p><h2 id="faq-title">Остались<br>вопросы?</h2></div><div class="faq-items"><details><summary>Как считается стоимость?<span aria-hidden="true">+</span></summary><p>Площадь умножается на тариф выбранной уборки. Если сумма меньше 3 000 ₽, применяется минимальная стоимость. Затем добавляется стоимость выбранных дополнительных услуг. Все тарифы в этом проекте демонстрационные.</p></details><details><summary>Мытьё окон входит в основную уборку?<span aria-hidden="true">+</span></summary><p>В этом калькуляторе окна считаются отдельно: 350 ₽ за одну створку. Количество можно ввести вручную или выбрать кнопками «−» и «+». Ограничения в 10 створок нет.</p></details><details><summary>Как добавить чистку духовки или холодильника?<span aria-hidden="true">+</span></summary><p>Включите переключатель нужной услуги. В расчёт войдёт один духовой шкаф или один холодильник по указанной цене. Подпись «внутренние поверхности» уточняет состав работ.</p></details><details><summary>Как считаются этажи, крыльцо и терраса?<span aria-hidden="true">+</span></summary><p>Для основной уборки укажите суммарную площадь помещений на всех этажах. Отдельной надбавки за число этажей в этом учебном расчёте нет. Крыльцо и терраса считаются отдельно по м², внутренняя лестница — по числу ступеней. Эти зоны не нужно повторно включать в основную площадь.</p></details><details><summary>Будет ли доплата, если дома есть питомец?<span aria-hidden="true">+</span></summary><p>Само наличие питомца не добавляет плату автоматически. При необходимости выберите дополнительную уборку шерсти: фиксированный учебный тариф <span data-extra-price="petHair">—</span> ₽ за всю уборку, независимо от количества животных. Речь о сборе шерсти с пола и доступных поверхностей. Доплата появится отдельной строкой в расчёте.</p></details><details><summary>Куда отправится моя заявка?<span aria-hidden="true">+</span></summary><p>Никуда: это учебный проект. После заполнения формы вы увидите итог в этой вкладке. Данные не отправляются и не сохраняются после обновления страницы.</p></details><details><summary>Это настоящая клининговая компания?<span aria-hidden="true">+</span></summary><p>«ЛЕГКО» здесь — демонстрационный бренд для изучения веб-разработки. Сайт показывает адаптивную вёрстку, работу калькулятора и проверку формы. Реальные услуги не оказываются.</p></details></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><a href="index.html" class="brand" aria-label="ЛЕГКО — клининг с заботой, на главную">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><use href="assets/brand-mark.svg#mark"/></svg>
+        <span class="brand-type"><span class="brand-wordmark">легко<span class="brand-dot" aria-hidden="true">.</span></span><span class="brand-tagline">клининг с заботой</span></span>
+      </a><p>Учебный проект · Сделано с вниманием к деталям.</p><span class="image-credit">Интерьеры — AI-визуализации</span></div></footer>
+  <dialog id="request-dialog" aria-labelledby="dialog-title"><button id="close-dialog" class="dialog-close" aria-label="Закрыть итог заявки">×</button><span class="dialog-mark" aria-hidden="true">✓</span><p class="eyebrow">Всё на своих местах</p><h2 id="dialog-title">Демо-заявка готова</h2><p id="dialog-greeting"></p><dl class="dialog-summary" id="dialog-summary"></dl><p class="receipt-caption">Расшифровка стоимости</p><dl class="estimate-lines dialog-receipt" id="dialog-receipt"></dl><p class="dialog-note">Это демонстрация. Заявка не отправлена, бронирование не создано.</p><button class="button" id="dialog-done">Понятно, спасибо</button></dialog>
+  <noscript><p class="noscript">Для калькулятора и демо-формы включите JavaScript. Описание услуг доступно и без него.</p></noscript>
+</body>
+</html>
