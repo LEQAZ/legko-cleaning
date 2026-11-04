@@ -4,6 +4,10 @@
 
 **[Открыть сайт](https://leqaz.github.io/legko-cleaning/)** · [Страница частного дома](https://leqaz.github.io/legko-cleaning/house.html)
 
+**[Смотреть видеопрезентацию](https://leqaz.github.io/legko-cleaning/presentation.html)** — 62 секунды, 1080p и 1440p. [Скачать видео и проект Movavika](https://github.com/LEQAZ/legko-cleaning/releases/tag/v1.1.0).
+
+[![Видеопрезентация проекта](dist/media/presentation-poster.jpg)](https://leqaz.github.io/legko-cleaning/presentation.html)
+
 ![Страница уборки квартир](screenshots/desktop.png)
 
 ## Задача и результат

@@ -47,7 +47,8 @@ try {
   await send('Page.enable'); await send('Runtime.enable');
   await send('Network.enable'); await send('Network.setCacheDisabled', { cacheDisabled: true });
   await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 1000, deviceScaleFactor: 1, mobile: false });
-  await send('Page.navigate', { url: 'http://127.0.0.1:5500' });
+  const baseUrl = (process.env.SITE_BASE_URL || 'http://127.0.0.1:5500').replace(/\/$/, '') + '/';
+  await send('Page.navigate', { url: baseUrl });
   for (let n = 0; n < 50; n++) {
     if (await evaluate("document.querySelector('#window-minus')?.disabled === true && document.querySelector('.room-photo')?.complete")) break;
     await waits(100);
@@ -258,6 +259,35 @@ try {
   await mouseDrag(100,170,0);
   assert.equal(await evaluate("document.querySelector('swarm-rebuild').shadowRoot.querySelector('button').textContent"),'Touring','Shadow-root extension buttons remain clickable');
   await evaluate("document.querySelector('swarm-rebuild').remove()");
+  await send('Page.navigate', {url: new URL('presentation.html',baseUrl).href});
+  for(let n=0;n<100;n++){
+    if(await evaluate("document.querySelector('#presentation-video')?.readyState >= 1")) break;
+    await waits(100);
+  }
+  assert.equal(await evaluate("document.querySelector('#presentation-video').videoWidth"),1920);
+  assert.equal(await evaluate("document.querySelector('#presentation-video').paused"),true,'Video does not autoplay');
+  assert.equal(await evaluate("document.querySelector('#presentation-video').controls"),true);
+  assert.ok(Math.abs(await evaluate("document.querySelector('#presentation-video').duration")-61.833)<.1);
+  await evaluate("new Promise(resolve=>{const v=document.querySelector('#presentation-video');v.addEventListener('seeked',resolve,{once:true});v.currentTime=5;})");
+  await evaluate("document.querySelector('#video-quality').value='media/legko-presentation-1440p.mp4';document.querySelector('#video-quality').dispatchEvent(new Event('change'));");
+  for(let n=0;n<100;n++){
+    if(await evaluate("document.querySelector('#presentation-video').videoWidth===2560 && document.querySelector('#presentation-video').currentTime>=4.9")) break;
+    await waits(100);
+  }
+  assert.equal(await evaluate("document.querySelector('#presentation-video').videoWidth"),2560,'HQ video loads');
+  const switchedTime=await evaluate("document.querySelector('#presentation-video').currentTime");
+  assert.ok(Math.abs(switchedTime-5)<.1,`Quality switch retains time: ${switchedTime}`);
+  await evaluate("document.querySelector('#presentation-video').muted=true;document.querySelector('#presentation-video').play()");
+  await waits(500);
+  assert.ok(await evaluate("document.querySelector('#presentation-video').currentTime")>5,'HQ video plays');
+  await evaluate("document.querySelector('#presentation-video').pause()");
+  for(const width of [1440,390,320]){
+    await send('Emulation.setDeviceMetricsOverride',{width,height:1000,deviceScaleFactor:1,mobile:width<600});
+    await waits(150);
+    assert.equal(await evaluate('document.documentElement.scrollWidth <= innerWidth'),true,'Presentation has no horizontal overflow');
+    const shot=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true});
+    await writeFile(path.join(artifacts,`presentation-${width}.png`),Buffer.from(shot.data,'base64'));
+  }
   assert.deepEqual(errors, [], 'Browser JavaScript errors');
   await writeFile(path.join(artifacts, 'browser-check.json'), JSON.stringify({ passed: true, viewportWidths: [1440, 390, 320], pages: ['index.html', 'house.html'], singleApplianceToggles:true,petHairFee:true,mousePageDrag:true,scrollPositionPreserved:true,sharedSelectionsPreserved:true,objectExtrasRestored:true,textSelectionAndSliderUnaffected:true,decorationsIgnorePointer:true,differentThemesAndInteriors: true, windowsBeyondTen: true, reducedMotion: true, pointerEffects: finePointerActive, pageLinks: true, propertyInRequest: true, serviceCardRates: true, calculator: true, minimum: true, extras: true, formValidation: true, demoDialog: true, mobileMenu: true, noHorizontalOverflow: true, browserExceptions: errors }, null, 2));
   console.log('Browser checks passed: mouse page dragging and scroll/state restoration, safe text/slider interaction, single appliances, optional pet-hair fee, receipts, links/forms, themes and responsive layouts.');

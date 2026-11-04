@@ -1,5 +1,13 @@
 # Интерьерные изображения
 
+## Видео и музыка
+
+Презентация: `dist/media/legko-presentation-1080p.mp4` и `legko-presentation-1440p.mp4`. Монтаж записей автора проекта: заставка, квартира, дом, финальный слайд. Версия 1440p заново обработана из исходных записей с меньшим сжатием; источник ограничивает детализацию. Титры масштабированы из графики 1080p.
+
+Music: "Carefree" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License — https://creativecommons.org/licenses/by/4.0/ . Источник: https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037 . Изменения: использован фрагмент, изменена громкость, добавлены fade-in/fade-out. Авторство включено в видео и страницу просмотра.
+
+Эффект: Swarm Rebuild — DhvanilPatel, адаптация Swarm от Joel Califa: https://github.com/DhvanilPatel/swarm-cursors . Код расширения в этот репозиторий не включён.
+
 Режим: встроенный инструмент imagegen (image_gen), без CLI/API-ключа пользователя. Созданы две самостоятельные фотореалистичные визуализации. Это не фотографии выполненных заказов; на страницах есть соответствующая отметка. Оригиналы генерации сохранены, рабочие копии размещены в проекте.
 
 ## Квартира
